@@ -49,9 +49,9 @@ Saldo awal:
 
 ### Contoh Input
 
-    create-account#Wiro Sableng#wirsab
-    create-account#Jaka Sembung#jaksem
-    ---
+create-account#Wiro Sableng#wirsab
+create-account#Jaka Sembung#jaksem
+---
 
 ### Output
 
@@ -97,10 +97,10 @@ Withdraw tidak boleh menyebabkan saldo negatif.
 
 ### Contoh Input
 
-    create-account#Jaka Sembung#jaksem
-    deposit#jaksem#100.0#2023/02/14 10:10:10#Salary
-    withdraw#jaksem#30.0#2023/02/15 11:00:00#Food
-    ---
+create-account#Jaka Sembung#jaksem
+deposit#jaksem#100.0#2023/02/14 10:10:10#Salary
+withdraw#jaksem#30.0#2023/02/15 11:00:00#Food
+---
 
 ### Output
 
@@ -130,11 +130,11 @@ Driver:
 
 ### Contoh Input
 
-    create-account#Naruto Uzumaki#naruto
-    create-account#Sasuke Uchiha#sasuke
-    deposit#naruto#100.0#2023/02/14 10:10:10#Mission reward
-    transfer#naruto#sasuke#40.0#2023/02/15 12:00:00#Team fund
-    ---
+create-account#Naruto Uzumaki#naruto
+create-account#Sasuke Uchiha#sasuke
+deposit#naruto#100.0#2023/02/14 10:10:10#Mission reward
+transfer#naruto#sasuke#40.0#2023/02/15 12:00:00#Team fund
+---
 
 ### Output
 

@@ -1,7 +1,7 @@
 
 package fintech.model;
 
-public abstract class Transaction {
+public abstract class Transaction implements Comparable<Transaction> {
 
     protected int id;
     protected String username;
@@ -19,4 +19,24 @@ public abstract class Transaction {
 
     public abstract String getType();
 
+    public int getId() {
+        return id;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
+    public int compareTo(Transaction o) {
+        return this.timestamp.compareTo(o.timestamp);
+    }
 }
