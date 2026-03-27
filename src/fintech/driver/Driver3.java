@@ -34,21 +34,22 @@ public class Driver3 {
             }
 
             else if (p[0].equals("transfer")) {
-                Account sender = map.get(p[1]);
+    Account sender = map.get(p[1]);
+    Account receiver = map.get(p[2]);
+    double amount = Double.parseDouble(p[3]);
 
-                
-            Account receiver = map.get(p[2]);
-                double amount = Double.parseDouble(p[3]);
+    try {
+        // Check balance BEFORE attempting withdraw
+        if (sender.getBalance() >= amount) {
+            sender.withdraw(amount);
+            receiver.deposit(amount);
 
-                try {
-                    sender.withdraw(amount);
-                    receiver.deposit(amount);
-
-                    sender.addTransaction(new TransferTransaction(id++, p[1], p[2], -amount, p[4], p[5]));
-                    receiver.addTransaction(new TransferTransaction(id++, p[2], p[1], amount, p[4], p[5]));
-
-                } catch (NegativeBalanceException e) {}
-            }
+            sender.addTransaction(new TransferTransaction(id++, p[1], p[2], -amount, p[4], p[5]));
+            receiver.addTransaction(new TransferTransaction(id++, p[2], p[1], amount, p[4], p[5]));
+        }
+        // If insufficient funds, do nothing and skip the transfer
+    } catch (NegativeBalanceException e) {}
+}
         }
 
         for (Account acc : map.values()) {
